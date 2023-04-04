@@ -4,6 +4,7 @@ const env = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
+const cors = require('cors');
 
 env.config();
 
@@ -12,10 +13,10 @@ mongoose
     .then(() => console.log("Db connected"))
     .catch((error) => console.log(error));
 
-
+app.use(cors());   
 app.use(express.json());
 app.use("/api/auth", authRoute);
-app.use("/api/user",userRoute);
+app.use("/api/user", userRoute);
 
 app.listen(process.env.PORT || 3001, () => {
     console.log("server running");
