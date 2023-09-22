@@ -5,6 +5,9 @@ const CryptoJS = require("crypto-js");
 
 //REGISTER
 const register = (async (req, res) => {
+    console.log("user register called "+req.body.email)
+    console.log("user register called "+req.body.password)
+    console.log("user register called "+req.body.username)
     const newUser = new UserModel({
       username: req.body.username,
       email: req.body.email,

@@ -7,7 +7,7 @@ const {
 } = require("../controller/verifyToken");
 
 //REGISTER
-router.post("/register", register);
+router.post("/registerUser", register);
 
 //UPDATE
 router.put("/update/:id", verifyTokenAndAuthorization, update);
